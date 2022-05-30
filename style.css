@@ -36,6 +36,9 @@ h1,
       transform: scale(0.97);
       transition: transform .1s;
   }
+  .memory-card.flip{
+      transform: rotateY(180deg);
+  }
   
   .front-face,
   .back-face {
