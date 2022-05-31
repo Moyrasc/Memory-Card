@@ -2,54 +2,156 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     color: #fff;
     background: hsl(227, 10%, 10%);
-  }
-h1,
-.counter {
-    display: flex;
+    overflow-x: hidden;
 }
-  
-  .memory-game {
+.stats{
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    font-family: 'Roboto Mono', monospace;
+}
+.moves{
+    padding-left: 16rem;
+}
+.timer{
+    padding-right: 16rem;
+}
+
+.controls{
+    text-align: center;
+    padding-top: 10px;
+}
+button{
+        background: none;
+        border: 2px solid;
+        font: inherit;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1em 2em;
+        color: #FFAE42;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+}
+button:hover,
+button:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em #FFAE42;
+    transform: translateY(-0.25em);
+
+}
+.memory-game {
     width: 640px;
-    height: 640px;
+    height: 640px; 
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
-  }
-  .memory-card {
+    -moz-perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+.memory-card {
     width: calc(25% - 10px);
-    height: calc(33.333% - 10px);
+    height: calc(33.333% - 10px); 
     margin: 5px;
     position: relative;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     transform: scale(1);
     transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     transition: transform .3s;
-  }
-  .memory-card:active{
+    -moz-transition: transform .3s;
+    -webkit-transition: transform .3s;
+}
+.memory-card:active{
       transform: scale(0.97);
+      -moz-transform: scale(0.97);
+      -webkit-transform: scale(0.97);
       transition: transform .1s;
-  }
-  .memory-card.flip{
+      -moz-transition: transform .1s;
+      -webkit-transition: transform .1s;
+}
+.memory-card.flip{
       transform: rotateY(180deg);
-  }
-  
-  .front-face,
-  .back-face {
+      -moz-transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+}
+.front-face,
+.back-face {
     width: 100%;
     height: 100%;
     padding: 10px;
     position: absolute;
     border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; 
+    -moz-backface-visibility: hidden;
     background:radial-gradient(#fde02c 0, #ffcd29 12.5%, #fdb829 25%, #f4a12b 37.5%, #e5892d 50%, #d4722e 62.5%, #c45f30 75%, #b54e32 87.5%, #a94135 100%);
-  }
-  .front-face{
+}
+.front-face{
       transform: rotateY(180deg);
-  }
+}
+/* Media Queries*/
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+
+ }
+
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+
+ }
+
+@media all and (max-width: 480px) {
+
+ }
+ /* Portrait */
+
+@media screen and (orientation:portrait) { /* Portrait styles here */ }
+/* Landscape */
+
+@media screen and (orientation:landscape) { /* Landscape styles here */ }
+
+ /* CSS for iPhone, iPad, and Retina Displays */
+
+ /* Non-Retina */
+@media screen and (-webkit-max-device-pixel-ratio: 1) {
+}
+/* Retina */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+}
+/* iPhone Portrait */
+
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+} 
+
+/* iPhone Landscape */
+
+@media screen and (max-device-width: 480px) and (orientation:landscape) {
+}
+
+/* iPad Portrait */
+@media screen and (min-device-width: 481px) and (orientation:portrait) {
+}
+
+/* iPad Landscape */
+@media screen and (min-device-width: 481px) and (orientation:landscape) {
+}
