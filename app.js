@@ -1,5 +1,13 @@
 // Comienzo del juego
-const btnStart= document.querySelector('.btn-start');
+const btnStart = document.querySelector('.btn-start');
+
+// Temporizador
+
+const timerGame = document.querySelector('.temp');
+
+// Contador de movimientos
+
+const moveCount = document.querySelector('.move');
 
 // Lógica de cartas
 
