@@ -1,4 +1,5 @@
 // Comienzo del juego
+const btnStart= document.querySelector('.btn-start');
 
 // Lógica de cartas
 
