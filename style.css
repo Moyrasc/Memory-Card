@@ -18,17 +18,20 @@ body {
     justify-content: space-around;
     font-size: 25px;
     font-family: 'Roboto Mono', monospace;
+    padding: 1.5rem 0;
 }
 .moves{
-    padding-left: 16rem;
+    padding-left: 29rem;
+    
 }
 .timer{
-    padding-right: 16rem;
-}
+   padding-right: 29rem;
+  
+} 
 
 .controls{
     text-align: center;
-    padding-top: 10px;
+    padding-top: 1rem;
 }
 button{
         background: none;
@@ -52,16 +55,20 @@ button:focus {
 .memory-game {
     width: 640px;
     height: 640px; 
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
+    margin: 0 auto; 
     perspective: 1000px;
     -moz-perspective: 1000px;
     -webkit-perspective: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr) );
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
 }
+
 .memory-card {
-    width: calc(25% - 10px);
-    height: calc(33.333% - 10px); 
+   width:/* calc(25% - 10px); */ 150px;
+    height: /*calc(33.333% - 10px)*/200px; 
     margin: 5px;
     position: relative;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
@@ -74,17 +81,17 @@ button:focus {
     -webkit-transition: transform .3s;
 }
 .memory-card:active{
-      transform: scale(0.97);
-      -moz-transform: scale(0.97);
-      -webkit-transform: scale(0.97);
-      transition: transform .1s;
-      -moz-transition: transform .1s;
-      -webkit-transition: transform .1s;
+    transform: scale(0.97);
+    -moz-transform: scale(0.97);
+    -webkit-transform: scale(0.97);
+    transition: transform .1s;
+    -moz-transition: transform .1s;
+    -webkit-transition: transform .1s;
 }
 .memory-card.flip{
-      transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-      -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 .front-face,
 .back-face {
@@ -101,57 +108,5 @@ button:focus {
     background:radial-gradient(#fde02c 0, #ffcd29 12.5%, #fdb829 25%, #f4a12b 37.5%, #e5892d 50%, #d4722e 62.5%, #c45f30 75%, #b54e32 87.5%, #a94135 100%);
 }
 .front-face{
-      transform: rotateY(180deg);
-}
-/* Media Queries*/
-@media all and (min-width: 1024px) and (max-width: 1280px) {
-
- }
-
-@media all and (min-width: 768px) and (max-width: 1024px) { 
-
-}
-
-@media all and (min-width: 480px) and (max-width: 768px) {
-
- }
-
-@media all and (max-width: 480px) {
-
- }
- /* Portrait */
-
-@media screen and (orientation:portrait) { /* Portrait styles here */ }
-/* Landscape */
-
-@media screen and (orientation:landscape) { /* Landscape styles here */ }
-
- /* CSS for iPhone, iPad, and Retina Displays */
-
- /* Non-Retina */
-@media screen and (-webkit-max-device-pixel-ratio: 1) {
-}
-/* Retina */
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (-o-min-device-pixel-ratio: 3/2),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {
-}
-/* iPhone Portrait */
-
-@media screen and (max-device-width: 480px) and (orientation:portrait) {
-} 
-
-/* iPhone Landscape */
-
-@media screen and (max-device-width: 480px) and (orientation:landscape) {
-}
-
-/* iPad Portrait */
-@media screen and (min-device-width: 481px) and (orientation:portrait) {
-}
-
-/* iPad Landscape */
-@media screen and (min-device-width: 481px) and (orientation:landscape) {
+    transform: rotateY(180deg);
 }

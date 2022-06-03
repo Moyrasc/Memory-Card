@@ -1,3 +1,7 @@
+// Comienzo del juego
+
+// Lógica de cartas
+
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
@@ -24,8 +28,8 @@ function flipCard() {
 
 function checkForMatch() {
     if (firstCard.dataset.character === secondCard.dataset.character) {
-             disableCards();
-             return;
+            disableCards();
+            return;
     }
         
     unflipCards();
@@ -66,3 +70,4 @@ function resetBoard() {
 
 //  Recorremos los elementos y con el evento cada vez que hagamos click en la carta, flipCard se activa y se gira
 cards.forEach(card => card.addEventListener('click', flipCard));
+
