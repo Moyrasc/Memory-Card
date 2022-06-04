@@ -20,6 +20,7 @@ else if (btnStart.textContent=== "Restart"){
 }
 
 }
+let movesCount = 0;
 let match = 0;
 let count = 0;
 let paused = true;
@@ -30,11 +31,7 @@ const interval = setInterval(()=>{
   } 
   }, 1000)
 
-// Contador de movimientos
-
-
-
-// Lógica de cartas
+  // Lógica de cartas
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -61,12 +58,16 @@ function checkForMatch() {
       match++;
       if(match == 6){
         paused = true;
-}
-      console.log(match);
-            disableCards();
-            return;
+      }
+          disableCards();
+        // Contador de movimientos
+        movesCount++;
+        moveCount.textContent = movesCount;
+          return;
     }
-        
+    // Contador de movimientos
+    movesCount++;
+    moveCount.textContent = movesCount;   
     unflipCards();
 }
 
