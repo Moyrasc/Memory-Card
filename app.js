@@ -1,18 +1,40 @@
-// Comienzo del juego
 const btnStart = document.querySelector('.btn-start');
-
-// Temporizador
-
 const timerGame = document.querySelector('.temp');
+const cards = document.querySelectorAll('.memory-card');
+const moveCount = document.querySelector('.move');
+
+// Comienzo del juego
+btnStart.addEventListener('click',startGame);
+
+function startGame (){
+  if(btnStart.textContent === "Start"){
+
+  //  Recorremos los elementos y con el evento cada vez que hagamos click en la carta, flipCard se activa y se gira
+  cards.forEach(card => card.addEventListener('click', flipCard));
+paused = false;
+btnStart.textContent = "Restart"
+}
+// Reiniciamos el juego
+else if (btnStart.textContent=== "Restart"){
+    location.reload();
+}
+
+}
+let match = 0;
+let count = 0;
+let paused = true;
+// Temporizador
+const interval = setInterval(()=>{
+  if(!paused){
+    timerGame.textContent = count++;
+  } 
+  }, 1000)
 
 // Contador de movimientos
 
-const moveCount = document.querySelector('.move');
+
 
 // Lógica de cartas
-
-const cards = document.querySelectorAll('.memory-card');
-
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -34,9 +56,13 @@ function flipCard() {
   checkForMatch();
 }
 // Buscar coincidencias de ambas cartas
-
 function checkForMatch() {
     if (firstCard.dataset.character === secondCard.dataset.character) {
+      match++;
+      if(match == 6){
+        paused = true;
+}
+      console.log(match);
             disableCards();
             return;
     }
@@ -72,11 +98,11 @@ function resetBoard() {
 
 (function shuffle() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
-    card.style.order = randomPos;
+    let randomPosition = Math.floor(Math.random() * 12);
+    card.style.order = randomPosition;
   });
 })();
 
-//  Recorremos los elementos y con el evento cada vez que hagamos click en la carta, flipCard se activa y se gira
-cards.forEach(card => card.addEventListener('click', flipCard));
+
+
 
